@@ -1,0 +1,265 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: system-ui, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.App {
+  height: 100vh;
+  background-color: #0f284a;
+  color: #fff;
+}
+.App .title h1 {
+  text-align: center;
+  padding: 20px 0px;
+}
+.toDoBox,
+.tasks,
+.completed {
+  background-color: #1e3a5f;
+  padding: 20px;
+  margin: 0 auto;
+  width: 70%;
+}
+.getInfo {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  width: 80%;
+}
+.getInfo .inputs div {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  margin-bottom: 30px;
+}
+.getInfo .inputs div input {
+  display: inline-block;
+  height: 35px;
+  border: none;
+  background-color: #0f284a;
+  border-bottom: 2px solid #ffffff;
+  border-radius: 2px;
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 3px;
+  transition: 0.3s;
+  color: #fff;
+}
+.getInfo .inputs div input:focus {
+  scale: 1.08;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #ffffff;
+}
+
+.getInfo .inputs div input::placeholder {
+  color: #afb2b9;
+}
+.getInfo .addTask button {
+  border: none;
+  background-color: #00193b;
+  color: #fff;
+  padding: 9px 20px;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+.getInfo .addTask button:hover {
+  background-color: #0f284a;
+}
+
+.task-comp {
+  width: fit-content;
+  background-color: #fff;
+}
+.task-comp .toDo-btn,
+.task-comp .comp-btn {
+  display: inline-block;
+  border: none;
+  padding: 5px 10px;
+  transition: 0.3s;
+  text-decoration: none;
+}
+.task-comp .task-comp:hover,
+.task-comp .comp-btn:hover {
+  background-color: #0f284a;
+  color: #fff;
+}
+.task-comp a.active {
+  background-color: #00193b;
+  color: #fff;
+}
+.tasks {
+  height: fit-content !important;
+  overflow: auto !important;
+  padding: 0;
+}
+.tasks::-webkit-scrollbar,
+.completed::-webkit-scrollbar  {
+  width: 8px;
+}
+.tasks::-webkit-scrollbar-track,
+.completed::-webkit-scrollbar-track {
+  background-color: transparent;
+  border-radius: 4px;
+}
+.tasks::-webkit-scrollbar-thumb,
+.completed::-webkit-scrollbar-thumb {
+  background-color: #00193b;
+}
+.tasks .task {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding:  20px;
+}
+.tasks .task:nth-child(odd) {
+  background-color: #0c2c5a;
+
+}
+.task-method {
+  display: flex;
+  justify-content: center;
+  width: 20%;
+}
+.task-method .delete-i,
+.task-method .checked-i {
+  font-size: 30px;
+  transition: .3s;
+}
+.task-method .checked-i {
+  color: #027e02;
+}
+.task-method .checked-i:hover {
+  color: #10a710;
+  scale: 1.9;
+}
+.task-method .delete-i {
+  color: #480505;
+}
+.task-method .delete-i:hover {
+  color: #7c1414;
+  scale: 1.3;
+}
+.task-method button {
+  border: none;
+  background-color: transparent;
+  margin: 20px;
+}
+.task-info {
+  width: 80%;
+  flex: 1;
+}
+.task-info p {
+  color: #afb2b9;
+}
+@media (max-width: 779px) {
+  .App .title h1 {
+    padding: 15px 0;
+  }
+  .toDoBox {
+    width: 100%;
+  }
+  .getInfo {
+    flex-direction: column;
+    gap: 0px !important;
+    margin-bottom: 10px;
+  }
+  .inputs {
+    flex-direction: column;
+    justify-content: center;
+    gap: 0px !important;
+    width: 100%;
+}
+.getInfo .inputs div {
+  margin-bottom: 5px;
+}
+.toDoBox, .tasks {
+  width: 100%;
+}
+.task-method button {
+  margin: 3px 5px;
+}
+.task-method .delete-i, 
+.task-method .checked-i {
+  font-size: 25px;
+}
+.getInfo .inputs div input:focus {
+  scale: 1.02;
+}
+.task-method  {
+  gap: 0px 5px;
+}
+.task-method .checked-i:hover {
+  scale: 1.02;
+}
+.addTask {
+  place-self: flex-end;
+}
+.toDoBox, .tasks {
+  padding: 10px;
+}
+.tasks {
+  height: 322px !important;
+}
+.toDoBox, .tasks, .completed {
+  width: 100%;
+}
+.clear-btn {
+  font-size: 12px;
+}
+}
+
+.completed .date {
+  color: #afb2b9;
+  font-style: italic;
+  margin-bottom: 3px;
+}
+.completed .task-completed .h3 {
+  margin: 0 !important;
+}
+.completed p {
+  color: #afb2b9;
+  margin: 0;
+}
+.completed h3 {
+  color: #24bda9;
+  margin: 0;
+}
+.completed
+.task-completed {
+  margin-bottom: 10px;
+}
+.completed {
+  height: 400px;
+  overflow: auto;
+  position: relative;
+}
+.clear-btn {
+  border: none;
+  background-color: transparent;
+  color: #ce0202;
+  text-decoration: underline;
+  width: fit-content;
+  transition: .3s;
+}
+.clear-btn:hover {
+  color: #ff0202;
+}
+
+.clear {
+  position: absolute;
+  right: 15px;
+  top: 8px;
+}
+
